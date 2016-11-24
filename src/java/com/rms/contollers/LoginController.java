@@ -40,7 +40,7 @@ public class LoginController extends HttpServlet {
         HttpSession session = request.getSession(false);
         User user = (User) session.getAttribute("user");
         if (user == null) {
-            request.getRequestDispatcher("Views/login.jsp").forward(request, response);
+            request.getRequestDispatcher("Views/login/login.jsp").forward(request, response);
         } else {
             out.print("home under cinstruction");
         }
@@ -80,7 +80,7 @@ public class LoginController extends HttpServlet {
         
         if (errors.get(0) != null || errors.get(1) != null) {
             request.setAttribute("errors", errors);
-            request.getRequestDispatcher("Views/errors/login-error.jsp").forward(request, response);
+            request.getRequestDispatcher("Views/login/login-error.jsp").forward(request, response);
         } else {
             User user = new User();
             user.setEmail(email);
@@ -91,7 +91,7 @@ public class LoginController extends HttpServlet {
             } else {
                 //out.println("<script>alert('Email or Password Error,Please Try Again');</script>");
                 request.setAttribute("error", "Email or Password Error,Please Try Again");
-                request.getRequestDispatcher("Views/login.jsp").include(request, response);
+                request.getRequestDispatcher("Views/login/login.jsp").include(request, response);
             }
         }
     }

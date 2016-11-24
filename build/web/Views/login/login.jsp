@@ -38,8 +38,8 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-lg-3"></div>
-                <div class="col-lg-6">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             Login
@@ -53,14 +53,16 @@
                                 <div class="col-lg-12">
                                     <input type="password" class="form-control" name="password">
                                 </div>
-                                <div class="col-lg-3"></div>
-                                <div class="col-lg-6 form-group">
+                                <br>
+                                <div class="col-md-3"></div>
+                                <div class="col-md-6 form-group">
                                     <input type="submit" class="form-control btn btn-primary" name="login" value="Login">
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
+                <div class="col-md-3"></div>
             </div>
         </div>
     </body>
