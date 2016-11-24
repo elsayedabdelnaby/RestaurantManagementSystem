@@ -5,7 +5,7 @@
  */
 package com.rms.listeners;
 
-import com.rms.db.ConnectionManager;
+import com.rms.db.DBUtil;
 import java.sql.Connection;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -21,7 +21,7 @@ public class ConnectionListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        connection = ConnectionManager.getInstance().getConnection();
+        connection = DBUtil.getConnection();
         sce.getServletContext().setAttribute("DBConnection", connection);
         System.out.println("Application StartUP and Open DBConneciton");
     }
@@ -34,7 +34,7 @@ public class ConnectionListener implements ServletContextListener {
             sce.getServletContext().removeAttribute("DBConnection");
             System.out.println("Application Closed and Close DBConnection");
         } catch (Exception e) {
-            System.out.println("Connection Close Error:" + e.getMessage());
+            System.err.println("Connection Close Error:" + e.getMessage());
         }
     }
 }
